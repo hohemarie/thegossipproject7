@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   get '/', to: 'dynamic_pages#index'
   get 'welcome/:first_name', to: 'dynamic_pages#welcome'
+  get 'potin/:id_potin', to: 'dynamic_pages#potin'
 end
