@@ -10,7 +10,7 @@ class DynamicPagesController < ApplicationController
   end
 
   def potin
-    @id = params[:id_potin]
+    @id_potin = params[:id_potin]
   end
   
   def user
