@@ -49,7 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
-  Gem 'tp'
+  gem 'table_print'
 end
 
 group :test do
