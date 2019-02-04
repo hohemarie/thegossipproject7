@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def team
-    puts "MA GROSSE KEKETTE"
+  end
+
+  def contact
   end
 end
