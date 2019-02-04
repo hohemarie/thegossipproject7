@@ -1,0 +1,3 @@
+<h1 class="text-center m-4">Bienvenue à toi visiteur</h1>
+<h2><%= Gossip.first.title %></h2>
+<p>pottin ecrit par: <%= User.find(Gossip.first.user_id).first_name %></p>
