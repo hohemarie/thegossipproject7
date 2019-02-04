@@ -10,7 +10,7 @@ class DynamicPagesController < ApplicationController
     @first_name = params[:first_name]
   end
 
-  def id
+  def user
     @user_id = params[:user_id]
   end
 end
