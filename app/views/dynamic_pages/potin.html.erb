@@ -1,2 +1,5 @@
-<p><%= @id %></p>
-<p><%= Gossip.title %></p>
+<h2><%= Gossip.find(@id_potin).title %></h2>
+<h2><%= Gossip.find(@id_potin).content %></h2>
+<h2><%= Gossip.find(@id_potin).user_id %></h2>
+<h2><%= Gossip.find(@id_potin).created_at %></h2>
+<h2><%= Gossip.find(@id_potin).updated_at %></h2>

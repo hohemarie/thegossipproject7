@@ -3,7 +3,6 @@ class DynamicPagesController < ApplicationController
     # @potin = Gossip.new
     @display = Gossip.all
     # puts @display["title"]
-    
   end
 
   def welcome
@@ -12,8 +11,9 @@ class DynamicPagesController < ApplicationController
 
   def potin
     @id = params[:id_potin]
+  end
+  
   def user
-    
     @user_id = params[:user_id]
   end
 end
