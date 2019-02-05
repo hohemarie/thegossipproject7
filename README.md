@@ -4,7 +4,7 @@
 
 # Instalation et préparation
 
-* git clone 
+* git clone https://github.com/Malik42/TheGossipProject2
 
 * run  bundle install
 
