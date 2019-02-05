@@ -4,19 +4,20 @@
       <div class="card-deck mb-3 text-center">
         <div class="card mb-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><h1 class="text-center m-4">Bienvenue tu es sur la page de l'id ;)</h1></h4>
+            <h4 class="my-0 font-weight-normal"><h1 class="text-center m-4">Bienvenue tu es sur la page de <%= User.find(@user_id).first_name %> ;)</h1></h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title"><h2><%= User.find(@user_id).first_name %></h2><small class="text-muted"></small></h1>
+            <h1 class="card-title pricing-card-title"><h2>First name: <%= User.find(@user_id).first_name %></h2><small class="text-muted"></small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li><h2>adresse : <%= User.find(@user_id).email %></h2></li>
-              <li><h2>description : <%= User.find(@user_id).description %></h2></li>
-              <li><h2>nom : <%= User.find(@user_id).first_name %></h2></li>
+                <li><h2>last name: <%= User.find(@user_id).last_name %></h2></li>
+                <li><h2>adresse email: <%= User.find(@user_id).email %></h2></li>
+                <li><h2>description: <%= User.find(@user_id).description %></h2></li>
+                <li><h2>City: <%= City.find(User.find(@user_id).city_id).name %></h2></li>
+                <li><h2>City zip code: <%= City.find(User.find(@user_id).city_id).zip_code %></h2></li>
             </ul>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary"><h1> id n° <%= @user_id %></h1></button>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary"><h2> id n° <%= @user_id %></h2></button>
           </div>
         </div>
     </div>
-
 </div>
 

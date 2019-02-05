@@ -15,7 +15,7 @@ class DynamicPagesController < ApplicationController
   
   def user
     @user_id = params[:user_id]
-    @description = params[:description]
-    @email = params[:email]
+    # @description = params[:description]
+    # @email = params[:email]
   end
 end
