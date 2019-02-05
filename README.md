@@ -1,24 +1,24 @@
-# README
+# Gossip project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+# Instalation et préparation
 
-* System dependencies
+* git clone 
 
-* Configuration
+* run  bundle install
 
-* Database creation
+* run rails db:create
 
-* Database initialization
+* run rails db:migrate
 
-* How to run the test suite
+* run rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+* check in your rails terminal the id to the User with tp User.all
 
-* Deployment instructions
+* after run rails server and run in your navigator localhost:3000 |  localhost:3000/team  | localhost:3000/contact | localhost:3000/welcom/id (step before)
 
-* ...
+# Contributors
+- Amine : @A42
+- Lorenzo : @Lorenzo
+- Malik : @Malik
