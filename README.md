@@ -2,7 +2,7 @@
 
 
 
-# Instalation et préparation
+# Installation et préparation
 
 * git clone https://github.com/Malik42/TheGossipProject2
 
