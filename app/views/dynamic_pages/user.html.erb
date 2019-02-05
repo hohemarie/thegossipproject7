@@ -1,4 +1,22 @@
-<h1 class="text-center m-4">Bienvenue tu es sur la page de l'idr</h1>
-<h2><%= User.find(@user_id).first_name %></h2>
-<p> ID : <%= User.first %></p>
-<h1><%= @user_id %></h1>
+
+
+<div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><h1 class="text-center m-4">Bienvenue tu es sur la page de l'id ;)</h1></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><h2><%= User.find(@user_id).first_name %></h2><small class="text-muted"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><h2>adresse : <%= User.find(@user_id).email %></h2></li>
+              <li><h2>description : <%= User.find(@user_id).description %></h2></li>
+              <li><h2>nom : <%= User.find(@user_id).first_name %></h2></li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary"><h1> id n° <%= @user_id %></h1></button>
+          </div>
+        </div>
+    </div>
+
+</div>
+
