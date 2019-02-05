@@ -2,5 +2,5 @@
     <h2>Titre du potin : <%= Gossip.find(@id_potin).title %></h2>
     <p>Contenu du potin : <%= Gossip.find(@id_potin).content %></p>
     <p>Crée le : <%= Gossip.find(@id_potin).created_at %></p>
-    <p>Pottin écrit par : <a href="http://localhost:3000//user/"><%= User.find(Gossip.id_potin.user_id).first_name %></a></p>
+    <p>Pottin écrit par : <a href="http://localhost:3000/user/<%= User.find(Gossip.find(@id_potin).user_id).id %>"><%= User.find(Gossip.find(@id_potin).user_id).first_name %> <%= User.find(Gossip.find(@id_potin).user_id).last_name %></a></p>
 </div>
