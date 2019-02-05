@@ -1,7 +1,6 @@
 class DynamicPagesController < ApplicationController
   # Method pour ma page index
   def index
-    @display = Gossip.all
   end
   # Method pour ma page welcome
   def welcome
@@ -14,7 +13,5 @@ class DynamicPagesController < ApplicationController
   # Method pour ma page user
   def user
     @user_id = params[:user_id]
-    @description = params[:description]
-    @email = params[:email]
   end
 end
