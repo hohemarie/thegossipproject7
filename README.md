@@ -4,7 +4,9 @@
 
 # Installation et préparation
 
-* git clone https://github.com/Malik42/TheGossipProject2
+* git clone the repository
+
+* change directory to gossiproj-depot
 
 * run  bundle install
 
@@ -16,9 +18,7 @@
 
 * check in your rails terminal the id to the User with tp User.all
 
-* after run rails server and run in your navigator localhost:3000 |  localhost:3000/team  | localhost:3000/contact | localhost:3000/welcom/id (step before)
+* after run rails server and run in your navigator localhost:3000 
 
 # Contributors
-- Amine : @A42
-- Lorenzo : @Lorenzo
-- Malik : @Malik
+Goudon
