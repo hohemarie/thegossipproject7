@@ -1,24 +1,18 @@
-# Gossip project
+# Bonjour et bienvenue - Hello and welcome
+Lien vers mon heroku app - Have fun!
 
+gossipproject322442234
 
+--Veuillez saisir l'url en entier pour essayer l'application en ligne.
 
-# Installation et préparation
+Please fill out the url to access the application online.
 
-* git clone the repository
+The Gossip Project est un site web de potins.
 
-* change directory to gossiproj-depot
+The Gossip Project is a gossips website.
 
-* run  bundle install
+Langage Ruby et HTML/ERB.
 
-* run rails db:create
+Ruby and HTML/ERB languages.
 
-* run rails db:migrate
-
-* run rails db:seed
-
-* check in your rails terminal the id to the User with tp User.all
-
-* after run rails server and run in your navigator localhost:3000 
-
-# Contributors
-Goudon
+Contributeurs/Contributors GOUDON
