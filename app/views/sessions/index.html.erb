@@ -1,2 +1,7 @@
-<h1>Sessions#index</h1>
-<p>Find me in app/views/sessions/index.html.erb</p>
+<h1>quand lutilisateur est connecte <p>
+<%= index %>
+
+<form action="create">
+<input type="hidden" name="authenticity_token" value = "<%form_authenticity_token %>">
+C'est quoi ton potin ? (formulaire de creation d'un nouveau potin)
+<input type="text" name="content">
