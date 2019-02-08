@@ -7,3 +7,4 @@
     <p>Crée le : <%= Gossip.find(@id_potin).created_at %></p>
     <p>Pottin écrit par : <a href="http://localhost:3000/user/<%= User.find(Gossip.find(@id_potin).user_id).id %>"><%= User.find(Gossip.find(@id_potin).user_id).first_name %> <%= User.find(Gossip.find(@id_potin).user_id).last_name %></a></p>
 </div>
+<%= link_to "Se déconnecter", session_path(session[:user_id]), method: :delete %>

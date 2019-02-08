@@ -2,3 +2,5 @@
 <%-# Cette page affiche un welcome avec le nom qu'on entre en parametre dans l'urel-%>
 
 <h1 class="text-center">BIENVENUE <%= @first_name %>! Ici c'est notre super site de potins, il est chouette, non ?</h1>
+
+<%= link_to "Se déconnecter", session_path(session[:user_id]), method: :delete %>
