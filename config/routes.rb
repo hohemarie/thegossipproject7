@@ -1,19 +1,44 @@
 Rails.application.routes.draw do
   # Contient les routes du programme
 
+  #Les pages statiques de mon programme
+
   get '/', to: 'dynamic_pages#index' # renvoi vers le model index
   get '/team', to: 'static_pages#team' # renvoi vers le model index
   get '/contact', to: 'static_pages#contact' # renvoi vers le model index
-  #get 'welcome/:first_name', to: 'dynamic_pages#welcome' # renvoi vers le model welcome
-  get 'potin/:id_potin', to: 'dynamic_pages#show' # renvoi vers le model potin
+
+  #Les pages dynamiques du dossier Ruby
+
+  get 'potin/:id_potin', to: 'sessions#show' # renvoi vers le model potin
 #/!\ on ne montre pas le potin si lutilisateur nest pas connecte
-  post 'potin/:id_potin', to: 'dynamic_pages#comment' #quand le commentaire est poste il doit etre associe a l'utilisateur concerne - dans notre programme lutilisateur actuel est appele : current_user
+  post 'potin/:id_potin', to: 'sessions#comment' #quand le commentaire est poste il doit etre associe a l'utilisateur concerne - dans notre programme lutilisateur actuel est appele : current_user
 
 #on verifie quil est bien connecte avec la methode logged_in?
   get 'user/:user_id', to: 'dynamic_pages#user' # renvoi vers le model user
-  get 'edit/:id_potin', to: 'dynamic_pages#edit' # renvoi vers le model potin
+
+#method get
+#le programme prend la variable aussi appelee parametre dans lurl
+#ensuite tout se fait dans le controller et la view
+#dans le controller on va chercher dans les DB de notre dossier ruby
+#dans notre view on affiche #en effet, dans le cas dune methode get la view nous sert a afficher des choses le controller nous sert a aller chercher des choses dans les bases de donnees
+#dans le fichier controller de mon fichier ruby je dois recuperer le valeur de la variable user_id et je dois aussi recuperer toutes les donnees de lutilisateur
+#a linterieur de ce dossier ruby je dois par la suite recuperer toutes les donnees relatives a cet utilisateur et les afficher comme demande sous la forme dune fiche donnant les informations de l'utilisateur
+#ces methodes doivent permettent un allegement de lecriture du code dans la view, un code de la view plus light ~~~~~
+  get 'edit/:id_potin', to: 'sessions#edit' # renvoi vers le model potin
+#a linterieur de cette methode get je me suis saisie du numero de lid du potin dans la fiche du potin alors que jetais connectee. 
+#dans cette page jai affiche le contenu du potin et jai commence a ecrire ma rectification du potin 
+
+#sur quelle page suis je ? Normalement, je suis sur le page du potin, mais ce n'est pas clair si je suis sur la page du potin ou non.
+  post 'edit/:id_potin', to: 'sessions#edit' 
+
+#je renvoi grace au formulaire un nouveau contenu du formulaire qui est a remplacer parlancien.
+#je peux supprimer lancien potin et rajouter un potin a la place de celui ci
 #/!\ je ne peux pas editer le potin si jesuis lauteur du potin
   get 'destroy/:id_potin', to: 'dynamic_pages#destroy' #renvoi vers le potin
+#un nom de variable ou aucun nom de variable dans le nom de la route
+#ici, un nom de variable.
+#dans le fichier controller on recupere le contenu de cette variable a linterieur de ce que l'on appelle un parametre.
+#verifions que la methode du fichier controller recupere bien le contenu de ce parametre.
 #je ne peux pas detruire le potin si je nesuis pas lauteur du potin
    
   get 'like/:id_potin/:user_id', to: 'dynamic_pages#like'#renvoi vers la methode et le model like
@@ -47,7 +72,10 @@ Rails.application.routes.draw do
  #log_in_user' #on cree des potins une fois connecte sur la page daccueil de la session - si on dispose de luser id on ne demande a lutilisateur que son mot de passe
   
   #pour linstant sur la page daccueil de la sessions tout ce quon fait cest se connecter et envoyer une adresse email et un mot de passe
-  get 'session-dutilisateur/:user_id', to: 'sessions#user' #On verifie que l'utilisateur est connecte
+#lutilisateur est connecte 
+  get 'session-dutilisateur/:user_id', to: 'sessions#user' #l'utilisateur est connecte#on a son id et on lui propose un eventail de choix des actions qu'il veut effectuer avec sa session d'utilisateur le logout fait partie de ces choix
+  get 'logout', to: 'dynamic_pages#welcome'
+
   post 'nouveau-potin/:user_id', to: 'dynamic_pages#create' #/!\ L'utilisateur ne peut pas creer de potin si l'utilisateur nest pas connecte
 
 #on cree un nouveau potin sur une nouvelle page
