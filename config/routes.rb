@@ -38,8 +38,8 @@ Rails.application.routes.draw do
  #log_in_user' #on cree des potins une fois connecte sur la page daccueil de la session - si on dispose de luser id on ne demande a lutilisateur que son mot de passe
   
   #pour linstant sur la page daccueil de la sessions tout ce quon fait cest se connecter et envoyer une adresse email et un mot de passe
-  get 'session-dutilisateur/:user_id', 'sessions#user' #On verifie que l'utilisateur est connecte
-  post 'nouveau-potin/:user_id', 'dynamic_pages#create' #/!\ L'utilisateur ne peut pas creer de potin si l'utilisateur nest pas connecte
+  get 'session-dutilisateur/:user_id', to: 'sessions#user' #On verifie que l'utilisateur est connecte
+  post 'nouveau-potin/:user_id', to: 'dynamic_pages#create' #/!\ L'utilisateur ne peut pas creer de potin si l'utilisateur nest pas connecte
 
 #on cree un nouveau potin sur une nouvelle page
   
