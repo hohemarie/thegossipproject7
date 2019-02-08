@@ -28,13 +28,4 @@ class DynamicPagesController < ApplicationController
 
   end
  
-  def like 
-    like = Like.create!(id_potin: id_potin, user_id: user_id)
-  end
-
-  def destroy
-    @id_potin = params[:id_potin]
-    Gossip.find(@id_potin).destroy
-    puts "le potin ayant pour id #{@id_potin} vient d'etre supprime"
-  end
 end
