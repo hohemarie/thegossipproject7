@@ -20,7 +20,14 @@ Rails.application.routes.draw do
   get 'welcome/:first_name', to: 'dynamic_pages#welcome' #on demande a lutilisateur un email et un mot de passe 
 #on recupere le first_name dans la barre de lurl - le first_name est dans notre app ruby un parametre (param) -- le fichier controller peut mettre le contenu de ce parametre dans une variable reutilisable dans les views ou dans les controllers
 #changerle controller
+#dans le ocntroller de dynamic pages la foncion welcome doit recuperer le contenu du parametre first name car nous avons une methode get
   post 'welcome', to: 'sessions#signin' 
+
+# la methode POST ne recupere pas lavaleur des parametres de la meme facon puisquil que la methode utilise des formulaires
+
+#dans le controller du fichier sessions je dois avoir les parametres recuperes par la methode POST ilsincluent deux choses le prenom de  dutilisateur email et mot de passe
+
+#ceux ci peuvent alors etre mis dans le fichier controller
 #si le personnge est mal identifiee ne pas sinscrire et rediriger vers la page dinscription
 #si le utilisateur ne remplit pas leschmap de linscription le remvoyer vers a page d;accueil
 #dans le methode post on doit envoyer les messages suivants

@@ -5,9 +5,14 @@ class DynamicPagesController < ApplicationController
     @auteur = User.find(gossip.user_id).first_name
     
   end
+
   # Method pour ma page welcome
   def welcome
     @first_name = params[:first_name] #recupere le prenom dans le page welcome pour laffcher dans la page home
+
+# nous sommes dans une methode get au niveau du fichier routes -- le parametre est recuere a partir de lurl 
+
+#la variable avec larobase doit etre reutilise telle quelle pour une utilisation ou un affichage eventuel dans une view
   end
 
   # Method pour ma page potin
