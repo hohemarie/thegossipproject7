@@ -1,0 +1,8 @@
+#methode link_to
+<%= link_to "Se déconnecter", session_path(session[:user_id]), method: :delete %>
+
+#formulaire methode post
+<form action="/" method="post">
+<input type="hidden" name="authenticity_token" value = "<%form_authenticity_token %>">
+ C'est quoi ton prénom?
+<input type = "text" name="first_name">
