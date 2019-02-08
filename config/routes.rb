@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 #dans cette page jai affiche le contenu du potin et jai commence a ecrire ma rectification du potin 
 
 #sur quelle page suis je ? Normalement, je suis sur le page du potin, mais ce n'est pas clair si je suis sur la page du potin ou non.
-  resource :show #si lutilisateur est bien connecte et quil a bien editele potin normalement le programme fait changer de page et la page qui saffiche est celle du potin modifie
+  resources :show #si lutilisateur est bien connecte et quil a bien editele potin normalement le programme fait changer de page et la page qui saffiche est celle du potin modifie
 
 #je renvoi grace au formulaire un nouveau contenu du formulaire qui est a remplacer parlancien.
 #je peux supprimer lancien potin et rajouter un potin a la place de celui ci
@@ -73,7 +73,7 @@ Rails.application.routes.draw do
   
   #pour linstant sur la page daccueil de la sessions tout ce quon fait cest se connecter et envoyer une adresse email et un mot de passe
 #lutilisateur est connecte 
-  resouces :index #l'utilisateur est connecte#on a son id et on lui propose un eventail de choix des actions qu'il veut effectuer avec sa session d'utilisateur le logout fait partie de ces choix le logout est effectue avec la methode link_to
+  resources :index #l'utilisateur est connecte#on a son id et on lui propose un eventail de choix des actions qu'il veut effectuer avec sa session d'utilisateur le logout fait partie de ces choix le logout est effectue avec la methode link_to
 #index ca va etre leventail de choix quun utilisateur peut avoir en utilisant sa session. Cettepage sappelerait donc index ? je vais la renommer et lappeler sessions.
 #pourquoi car a linteiruer du contrlller il y a des ptits fonctions. celles ci sont tresliees a leur controlleur.
 

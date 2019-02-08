@@ -3,4 +3,9 @@
 
 <h1 class="text-center">BIENVENUE <%= @first_name %>! Ici c'est notre super site de potins, il est chouette, non ?</h1>
 
+<form action="">
+<input type="hidden" name="authenticity_token" value = "<%form_authenticity_token %>">
+ C'est quoi ton prénom?
+<input type = "text" name="first_name">
+
 <%= link_to "Se déconnecter", session_path(session[:user_id]), method: :delete %>
