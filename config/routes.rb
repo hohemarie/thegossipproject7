@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'dynamic_pages#index' # renvoi vers le model index
   get '/team', to: 'static_pages#team' # renvoi vers le model index
   get '/contact', to: 'static_pages#contact' # renvoi vers le model index
-  get 'welcome/:first_name', to: 'dynamic_pages#welcome' # renvoi vers le model welcome
+  #get 'welcome/:first_name', to: 'dynamic_pages#welcome' # renvoi vers le model welcome
   get 'potin/:id_potin', to: 'dynamic_pages#show' # renvoi vers le model potin
 #/!\ on ne montre pas le potin si lutilisateur nest pas connecte
   post 'potin/:id_potin', to: 'dynamic_pages#comment' #quand le commentaire est poste il doit etre associe a l'utilisateur concerne - dans notre programme lutilisateur actuel est appele : current_user
@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 #je ne peux pas detruire le potin si je nesuis pas lauteur du potin
    
   get 'like/:id_potin/:user_id', to: 'dynamic_pages#like'#renvoi vers la methode et le model like
-  get 'page-de-connexion', to: 'sessions#page-de-connexion' #on demande a lutilisateur un email et un mot de passe 
-  post 'page-de-connexion', to: 'sessions#signin' 
+  get 'welcome/:first_name', to: 'dynamic_pages#welcome' #on demande a lutilisateur un email et un mot de passe 
+#on recupere le first_name dans la barre de lurl - le first_name est dans notre app ruby un parametre (param) -- le fichier controller peut mettre le contenu de ce parametre dans une variable reutilisable dans les views ou dans les controllers
+#changerle controller
+  post 'welcome', to: 'sessions#signin' 
 #si le personnge est mal identifiee ne pas sinscrire et rediriger vers la page dinscription
 #si le utilisateur ne remplit pas leschmap de linscription le remvoyer vers a page d;accueil
 #dans le methode post on doit envoyer les messages suivants
