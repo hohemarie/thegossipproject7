@@ -1,6 +1,8 @@
 class DynamicPagesController < ApplicationController
   include DynamicPagesHelper
   # Method pour ma page index
+  cookies.permanent.signed[:user_id] = user.id
+  User.find_by(id: cookies.signed[:user_id])
   def index
     @id_potin = params[:id_potin]
     @auteur = User.find(gossip.user_id).first_name
