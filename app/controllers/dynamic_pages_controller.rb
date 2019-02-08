@@ -1,4 +1,5 @@
 class DynamicPagesController < ApplicationController
+  include DynamicPagesHelper
   # Method pour ma page index
   def index
     @id_potin = params[:id_potin]

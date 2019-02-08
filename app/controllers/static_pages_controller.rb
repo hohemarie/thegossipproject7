@@ -1,4 +1,5 @@
-class StaticPagesController < ApplicationController
+class StaticPagesController < ApplicationController 
+  include StaticPagesHelper
   # Method pour ma page team
   def team
   end

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
   before_action :logged_in?, only: [:create]
   before_action :logged_in?, only: [:like]
   before_action :logged_in?, only: [:comment]
