@@ -2,9 +2,9 @@ require 'faker' # on inclus la gem faker qui avs nous permettre de generer des d
 @no_rep=0
 20.times do
   @no_rep+=1
-  conversation = Conversation.create!(id: @no_rep, role: "Role A", replique: "replique du premier personnage")
+  conversation = Conversation.create!(role: "Role A", replique: "replique du premier personnage", user_id:1 , name: "Alice")
   @no_rep+=1
-  conversation = Conversation.create!(id: @no_rep, role: "Role B", replique: "replique du second personnage",user_id: @user_id, name: User.find(@user_id))
+  conversation = Conversation.create!(role: "Role B", replique: "replique du second personnage", user_id: 2, name: "Bob")
 end
 # on vide toutes les tables
 
