@@ -1,0 +1,2 @@
+class Mygossip < ApplicationRecord
+end
