@@ -1,3 +1,4 @@
-<% @id_potin = 6 %>
-<%= link_to "lien vers une autre page", essayeencore_path(@id_potin) %>
-
+<% @gossips.each do |ce_potin| %>
+  <% @id_potin = ce_potin.id %>
+  <%= link_to ce_potin.title, essayeencore_path(@id_potin) %>
+<% end %>

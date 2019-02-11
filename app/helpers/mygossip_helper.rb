@@ -1,0 +1,2 @@
+module MygossipHelper
+end

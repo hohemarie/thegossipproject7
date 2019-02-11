@@ -1,0 +1,2 @@
+class ClickController < ApplicationController
+end

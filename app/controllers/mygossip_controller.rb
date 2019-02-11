@@ -1,0 +1,2 @@
+class MygossipController < ApplicationController
+end

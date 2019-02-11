@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   # Contient les routes du programme
-
+  resources :create
+  resource :create
+  resources :new
+  resource :new
+  resources :account
   #Les pages statiques de mon programme
   resources :gossip
   resources :essaye
-  resources :essayeencore, only: [:show]
+  resource :essaye
+  resources :essayeencore#, only: [:show]
   resource :essayeencore
   # renvoi vers le model index
   resources :team # renvoi vers le model index
