@@ -6,8 +6,13 @@ require 'faker' # on inclus la gem faker qui avs nous permettre de generer des d
   @no_rep+=1
   conversation = Conversation.create!(role: "Role B", replique: "replique du second personnage", user_id: 2, name: "Bob")
 end
+4.times do
+  @no_rep+=1
+  mp = Conversation.create!(role: "Role A", replique: "replique du premier personnage", user_id: 1, name: "Alice", pm: "Ceci est un message prive. Salut Bob. La cle secrete est rhyg6543ijhu7687hyhyhyhy")
+  @no_rep +=1
+  mp = Conversation.create!(role: "Role B", replique: "replique du second personnage", user_id: 2, name: "Bob", pm: "Salut Alice. la cle secrete est oeem9487mjfl0989jjfmmfjf") 
 # on vide toutes les tables
-
+end
 User.destroy_all
 City.destroy_all
 Gossip.destroy_all

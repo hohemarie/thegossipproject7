@@ -1,5 +1,5 @@
 module SessionsHelper
-  before_action :authenticate_user, only: [:index]
+  #before_action :authenticate_user, only: [:index]
   def current_user
     User.find_by(id: session[:user_id])
   end
@@ -12,10 +12,10 @@ module SessionsHelper
   end
 
   def index
-    html+= "<%= "Comment", comment_path %>"
-    html+="<%="Like",like_path %>"
-    html+= "<%= "Create Gossip", create_path %>"
-    html
+    #html+= "<%= "Comment", comment_path %>"
+    #html+="<%#"Like",like_path %>"
+    #html+= "<%= "Create Gossip", create_path %>"
+    #html
   end
 
   def remember(user)

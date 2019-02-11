@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :index
   # Contient les routes du programme
 
   #Les pages statiques de mon programme
-
-  resources :index # renvoi vers le model index
+  resources :gossip
+  resources :essaye
+  resources :essayeencore, only: [:show]
+  resource :essayeencore
+  # renvoi vers le model index
   resources :team # renvoi vers le model index
   resources :contact # renvoi vers le model index
 

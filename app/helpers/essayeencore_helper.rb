@@ -1,0 +1,2 @@
+module EssayeencoreHelper
+end
