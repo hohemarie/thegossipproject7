@@ -2,7 +2,7 @@ class EssayeencoreController < ApplicationController
   before_action :authenticate_user, only: [:show]
   def show
     puts params[:id]
-    @id_gossip = Mygossip.find.last.monpotin
+    @id_gossip = Mygossip.last.monpotin
     @contenu_du_potin = Gossip.find(@id_gossip).content
     @titre_du_potin = Gossip.find(@id_gossip).title
     

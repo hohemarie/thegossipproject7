@@ -1,14 +1,15 @@
 module SessionsHelper
   #before_action :authenticate_user, only: [:index]
   def current_user
-    User.find_by(id: session[:user_id])
+    #Identifiant.find_by(identifiant: identifiant)
+    id = account[:identifiant]
+    @user = User.find(id)
   end
 
     # Remembers a user in a persistent session.
   def remember(user)
-    user.remember
-    cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent[:remember_token] = user.remember_token
+    User.remember
+    cookies.permanent.signed[:user] = user.id
   end
 
   def index
@@ -20,18 +21,17 @@ module SessionsHelper
 
   def remember(user)
     user.remember
-    cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent[:remember_token] = user.remember_token
+    cookies.permanent.signed[:user] = user.id
   end
 
 #logs in the given user
   def log_in(user)
-    session[:user_id] = user.id
+    session[:user] = user.id
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find_by(id: session[:user_id])
+    if session[:user]
+      @current_user ||= User.find_by(user: session[:user])
     end
   end
 
@@ -40,7 +40,7 @@ module SessionsHelper
   end
   
   def log_out
-    session.delete(:user_id)
+    session.delete(:user)
     @current_user = nil
   end
   
@@ -49,7 +49,7 @@ module SessionsHelper
   def authenticate_user
     unless current_user
       flash[:danger] = "please log in."
-      redirect_to new_session_path
+      redirect_to new_account_path
     end
   end
 end
